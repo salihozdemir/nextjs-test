@@ -10,15 +10,15 @@ export default function BlogPostList() {
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
   const { authenticated, redirectTo } = await authProvider.check(context);
 
-  const translateProps = await serverSideTranslations(context.locale ?? "en", [
+  /* const translateProps = await serverSideTranslations(context.locale ?? "en", [
     "common",
-  ]);
+  ]); */
 
   if (!authenticated) {
     return {
-      props: {
+/*       props: {
         ...translateProps,
-      },
+      }, */
       redirect: {
         destination: `${redirectTo}?to=${encodeURIComponent("/blog-posts")}`,
         permanent: false,
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
 
   return {
     props: {
-      ...translateProps,
+      /* ...translateProps, */
     },
   };
 };
