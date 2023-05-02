@@ -52,13 +52,13 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
     );
   };
 
-  const { t, i18n } = useTranslation();
+  /* const { t, i18n } = useTranslation(); */
 
-  const i18nProvider = {
+ /*  const i18nProvider = {
     translate: (key: string, params: object) => t(key, params),
     changeLocale: (lang: string) => i18n.changeLanguage(lang),
     getLocale: () => i18n.language,
-  };
+  }; */
 
   return (
     <>
@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               dataProvider={dataProvider(API_URL)}
               notificationProvider={notificationProvider}
               authProvider={authProvider}
-              i18nProvider={i18nProvider}
+             /*  i18nProvider={i18nProvider} */
               resources={[
                 {
                   name: "blog_posts",
@@ -112,4 +112,4 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;
